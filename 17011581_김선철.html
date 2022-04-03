@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #Bitter_Fear {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        #Bitter_Fear h1 {
+            font-size: 50px;
+        }
+        #Bitter_Fear p {
+            font-size: 25px;
+            line-height: 10px;
+        }
+        #repayment {
+            margin: auto;
+            text-align: center;
+        }
+        #repayment {
+            font-size: 30px;
+        }
+        #start {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 70%;
+            height: auto;
+            padding-top: 10%;
+            padding-bottom: 10%;
+            text-align: center;
+        }
+        #principal {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 70%;
+            height: auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var repayment_money = 30000;
+        console.log(repayment_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", "));
+        document.addEventListener("DOMContentLoaded", function() {
+            // 시간을 딜레이 없이 나타내기 위한 선 실행
+            Bitter_Fear();
+
+            // 이후 1초에 한 번씩 시간을 갱신한다.
+            setInterval(Bitter_Fear, 1000);
+        });
+
+        function Bitter_Fear() {
+            let rate = 0.001;
+            // repayment_money = repayment_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
+            document.getElementById("real-repayment").innerHTML = parseInt(repayment_money);
+            repayment_money = parseInt(repayment_money + repayment_money * rate);
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="Bitter_Fear">
+       <h1>공포의 새대갈</h1> 
+       <p>돈갚아!!!</p>
+       <img src="IMG_0449.JPG" width="300px" height="300px" alt="SEDEGAL">
+    </div>
+    <div id="repayment">
+        <h2>현재 상환필요액</h2>
+        <h2><span id="real-repayment"></span>원</h2>
+    </div>
+    <div id="start">
+        <h1>대출 일시</h1>
+        <p>Sun Apr 03 2022 17:40:00</p>
+        <p>GMT+0900 (한국 표준시)</p>
+    </div>
+    <div id="principal">
+        <h1>원금</h1>
+        <p>30000원</p>
+    </div>
+
+</body>
+</html>
